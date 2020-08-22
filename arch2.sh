@@ -32,7 +32,7 @@ echo 'Обновляем grub.cfg'
 grub-mkconfig -o /boot/grub/grub.cfg
 
 echo 'Ставим программу для Wi-fi'
-pacman -S dialog wpa_supplicant --noconfirm 
+pacman -S dialog wpa_supplicant vim --noconfirm 
 
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
@@ -62,12 +62,12 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo "Ставим XFCE"
-pacman -S xfce4 xfce4-goodies --noconfirm
+# echo "Ставим XFCE"
+# pacman -S xfce4 xfce4-goodies --noconfirm
 
-echo 'Cтавим DM'
-pacman -S lxdm --noconfirm
-systemctl enable lxdm
+# echo 'Cтавим DM'
+# pacman -S lxdm --noconfirm
+# systemctl enable lxdm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
